@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.example.proyectojavamvvm'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.proyectojavamvvm"
+        minSdk 21
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        viewBinding = true
+        //noinspection DataBindingWithoutKapt
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kapt {
+        generateStubs = true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.navigation:navigation-fragment:2.9.7'
+    implementation 'androidx.navigation:navigation-ui:2.9.7'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.51"
+    annotationProcessor "com.google.dagger:hilt-compiler:2.51"
+
+    // Retrofit & RxJava Adapter
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+
+    // RxJava 3
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+
+    // Room (Manejo total de SQLite)
+    implementation 'androidx.room:room-runtime:2.6.1'
+    implementation 'androidx.room:room-rxjava3:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    // UI & Navigation
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+}
