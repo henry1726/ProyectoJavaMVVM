@@ -19,22 +19,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoJavaMVVM">
-        <activity
-            android:name=".ui.activity1.DownloadActivity"
-            android:exported="false"
-            android:theme="@style/Theme.ProyectoJavaMVVM" />
-        <activity
-            android:name=".ui.MainActivity"
+        <activity android:name=".ui.downloadConsultCat.DescargaYConsultaCatActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.DownloadActivity" />
-        <activity android:name=".ui.ConsultActivity" />
-        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.downloadCat.DescargaCatalogoActivity" />
+        <activity android:name=".ui.consultCat.ConsultaCatalogoActivity" />
     </application>
 
 </manifest>

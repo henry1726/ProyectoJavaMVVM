@@ -4,15 +4,17 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 @Entity(tableName = "abastecimiento")
 public class Abastecimiento {
-    @PrimaryKey
-    @SerializedName("id")
-    public int idAbastecimiento;
-
-    @SerializedName("nombre")
-    public String nombre;
-
-    public int opcionSeleccionada = 0; // 1 = SÍ, 2 = NP, 3 = N/A
-    public String rutaImagen = "";
+    @PrimaryKey @SerializedName("idAbastecimiento") public int idAbastecimiento;
+    @SerializedName("tipoAbastecimiento") public String tipoAbastecimiento;
+    @SerializedName("usuarioCreacion") public String usuarioCreacion;
+    @SerializedName("usuarioModificacion") public String usuarioModificacion;
+    @SerializedName("usuarioEliminacion") public String usuarioEliminacion;
+    @SerializedName("fechaCreacion") public String fechaCreacion;
+    @SerializedName("fechaModificacion") public String fechaModificacion;
+    @SerializedName("fechaEliminacion") public String fechaEliminacion;
 }
+
